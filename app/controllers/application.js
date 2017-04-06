@@ -1,16 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  countries: ['United States', 'Spain', 'Portugal', 'Russia', 'Latvia', 'Brazil', 'UK'],
-  chosenCountry: 'United States',
+  addressTypes: ['mailing', 'practice'],
+  selectedAddressType: 'mailing',
   actions: {
-    createCountry(countryName){
-      this.get('countries').pushObject(countryName);
-      this.set('chosenCountry', countryName);
+    createAddressType(addressType){
+      this.get('addressTypes').pushObject(addressType);
+      this.set('selectedAddressType', addressType);
       console.log(this.get('countries'));
     },
-    chooseCountry(countryName){
-      this.set('chosenCountry', countryName);
+    chooseAddressType(addressType){
+      this.set('selectedAddressType', addressType);
     }
   }
 });

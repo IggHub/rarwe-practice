@@ -9,14 +9,14 @@
 <h2>Power Select:</h2>
 
 {{#power-select-with-create
-    selected=chosenCountry
-    options=countries
-    onchange=(action "chooseCountry")
-    oncreate=(action "createCountry") as |country term|
+    selected=selectedAddressType
+    options=addressTypes
+    onchange=(action "chooseAddressType")
+    oncreate=(action "createAddressType") as |addressType term|
 }}
-  {{country}}
+  {{addressType}}
 {{/power-select-with-create}}
 
 <p>Hello! You just created:</p>
-  <h1>{{chosenCountry}}</h1>
+  <h1>{{selectedAddressType}}</h1>
 {{outlet}}
