@@ -9,6 +9,8 @@ export default Ember.Controller.extend({
   canCreateSong: Ember.computed('songCreationStarted', 'model.songs.length', function(){
     return this.get('songCreationStarted') || this.get('model.songs.length');
   }),
+  sortProperties: ['rating: desc', 'title: asc'],
+  sortedSongs: Ember.computed.filterBy('model.songs','sortProperties'),
   actions: {
     updateRating(params){
       var song = params.item, rating = params.rating;
