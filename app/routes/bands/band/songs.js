@@ -20,7 +20,7 @@ export default Ember.Route.extend({
         controller.set('title', '');
       })
     },
-    didTransition: function() {
+    didTransition() {
       var band = this.modelFor('bands.band');
       document.title = `${band.get('name')} songs - Rock & Roll`;
     },
